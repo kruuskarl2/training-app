@@ -5,9 +5,70 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
     <title>Training</title>
   </head>
   <body>
+    <div class="columns">
+        <div class="column section is-1 box">
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="column section is-6">
+            <h1 class="title is-1">RECIPES</h1>
+            <button class="button is-info" id="addRecipeBtn">Add Recipe</button>
+            <br><br>
+            <aside class="menu">
+                <p class="menu-label">Breakfast</p>
+                <ul class="menu-list" id="breakfastList">
+                </ul>
+                <p class="menu-label">Dinner</p>
+                <ul class="menu-list"  id="dinnerList">
+                </ul>
+                <p class="menu-label">Supper</p>
+                <ul class="menu-list" id="supperList">
+                </ul>
+            </aside>
+        </div>
+        <div class="column section box is-5" id="recipeTab">
+            <h1 class="title">FOOD NAME</h1>
+            <h1 class="subtitle">500 calories per serving</h1>
+        </div>
+    </div>
+    <div class="modal" id="recipeModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">New Recipe</p>
+                <!--<button class="delete" aria-label="close"></button>-->
+            </header>
+            <section class="modal-card-body">
+                <p>Name</p>
+                <input class="input is-info" type="text" placeholder="Name of Recipe" id="recipeModalName">
+                <br><br>
+                <p>Time of Day</p>
+                <div class="select is-info">
+                    <select id="recipeModalTime">
+                        <option>Breakfast</option>
+                        <option>Dinner</option>
+                        <option>Supper</option>
+                    </select>
+                </div>
+                <br><br>
+                <p>Calories per Serving</p>
+                <input class="input is-info" type="number" placeholder="Calories per Serving" id="recipeModalCal">
+                <br><br>
+                <p>Ingredients/Other Information</p>
+                <textarea class="textarea is-info" id="recipeModalIng"></textarea>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-info" id="recipeModalAddBtn">Add Recipe</button>
+                <button class="button" id="recipeModalCancelBtn">Cancel</button>
+            </footer>
+        </div>
+    </div>
     <script src="./renderer.js"></script>
   </body>
 </html>

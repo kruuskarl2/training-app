@@ -1,0 +1,12 @@
+/*#recipeTab {
+    position: fixed;
+    width: 70%;
+    height: 100vh;
+    overflow: hidden;
+    right: 0;
+}
+*/
+
+.section {
+    height: 100vh;
+}
