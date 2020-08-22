@@ -84,5 +84,12 @@ function openRecipe(name) {
         if (error) throw error;
         document.getElementById("recipeTabName").innerHTML = name.toUpperCase();
         document.getElementById("recipeTabCalories").innerHTML = data.caloriesPerServing + ' calories per serving';
+        document.getElementById("recipeTabDesc").innerHTML = urlify(data.ingredients);
     });
 }
+
+function urlify(text) {
+    // Source: https://stackoverflow.com/questions/1500260/detect-urls-in-text-with-javascript
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, '<a href="$1">$1</a>')
+  }
