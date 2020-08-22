@@ -1,5 +1,6 @@
 const storage = require('electron-json-storage')
 const defaultDataPath = storage.getDefaultDataPath();
+const { shell } = require('electron');
 
 // BUTTON FUNCTIONS
 document.getElementById('addRecipeBtn').onclick = function(){
@@ -92,5 +93,5 @@ function openRecipe(name) {
 function urlify(text) {
     // Source: https://stackoverflow.com/questions/1500260/detect-urls-in-text-with-javascript
     var urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, '<a href="$1">$1</a>');
+    return text.replace(urlRegex, '<a onclick="shell.openExternal(\'$1\')">$1</a>');
   }
