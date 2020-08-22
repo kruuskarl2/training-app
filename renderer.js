@@ -43,6 +43,7 @@ function addRecipe() {
         nameEl.value = '';
         timeEl.selectedIndex = '0';
         kcalEl.value = '';
+        ingEl.value = '';
     }, 250)
 }
 
