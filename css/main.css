@@ -22,13 +22,32 @@
 .fas {
     font-size: 30px;
     width: 100%;
+    transition: 0.2s;
 }
 
 .fas:hover {
     color: #3298dc;
-    transition: 0.2s;
 }
 
 html {
     overflow: hidden;
+}
+
+.fa-trash-alt {
+    float: left;
+    width: 5%;
+    font-size: 38px;
+}
+
+#recipeTabName {
+    float: left;
+    width: 95%;
+}
+
+.clearfix{
+    clear:both
+}
+
+.content {
+    padding: 3rem 
 }

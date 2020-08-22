@@ -6,6 +6,15 @@ const { shell } = require('electron');
 document.getElementById('addRecipeBtn').onclick = function(){
     document.getElementById('recipeModal').classList.add('is-active');
 }
+document.getElementById('recipeTabDeleteBtn').onclick = function(){
+    storage.setDataPath(defaultDataPath + '/recipes');
+    var recipeTab = document.getElementById('recipeTabDeleteBtn').parentElement;
+    var key = recipeTab.getAttribute('data-name');
+    storage.remove(key, function(error) {
+        if (error) throw error;
+        showRecipes();
+    });
+}
 document.getElementById('recipeModalCancelBtn').onclick = closeRecipeModal;
 document.getElementById('recipeModalAddBtn').onclick = addRecipe;
 // END BUTTON FUNCTIONS
@@ -87,6 +96,8 @@ function openRecipe(name) {
         document.getElementById("recipeTabName").innerHTML = name.toUpperCase();
         document.getElementById("recipeTabCalories").innerHTML = data.caloriesPerServing + ' calories per serving';
         document.getElementById("recipeTabDesc").innerHTML = urlify(data.ingredients);
+
+        document.getElementById("recipeTab").setAttribute('data-name', name);
     });
 }
 
@@ -94,4 +105,4 @@ function urlify(text) {
     // Source: https://stackoverflow.com/questions/1500260/detect-urls-in-text-with-javascript
     var urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, '<a onclick="shell.openExternal(\'$1\')">$1</a>');
-  }
+}
