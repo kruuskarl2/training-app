@@ -55,8 +55,7 @@ function showRecipes() {
     });
     
     document.getElementById('breakfastList').innerHTML = '';
-    document.getElementById('dinnerList').innerHTML = '';
-    document.getElementById('supperList').innerHTML = '';
+    document.getElementById('dinnerSupperList').innerHTML = '';
 
     window.setTimeout(function() {
         names = [];
@@ -64,12 +63,14 @@ function showRecipes() {
             // Recipe object is stored on 2nd index, name is on the 1st
             recipe = recipeParent[1];
             name = recipeParent[0];
+
             var listId;
             if (recipe.timeOfDay == 'Breakfast') listId = 'breakfastList';
-            if (recipe.timeOfDay == 'Dinner') listId = 'dinnerList';
-            if (recipe.timeOfDay == 'Supper') listId = 'supperList';
+            if (recipe.timeOfDay == 'Dinner/Supper') listId = 'dinnerSupperList';
+
             document.getElementById(listId).innerHTML += 
                 '<li><a onclick="openRecipe(\'' + name + '\')"><h2 class="subtitle is-5">' + name + ': <strong>' + recipe.caloriesPerServing + ' kcal<strong></h2></a></li>';
+
             // Assign all names to an array to later add function to the recipes
             names.push(name);
         });
