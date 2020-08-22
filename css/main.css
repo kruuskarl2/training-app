@@ -1,5 +1,9 @@
-.section {
+.box {
     height: 105vh;
+}
+
+.recipes {
+    overflow: auto;
 }
 
 .sidebar {
@@ -8,6 +12,7 @@
     height: 105vh;
     width: 69px;
     overflow: hidden;
+    outline: 5px solid #3298dc;
 }
 
 .expanded {
@@ -21,5 +26,9 @@
 
 .fas:hover {
     color: #3298dc;
-    transition: 0.3s;
+    transition: 0.2s;
+}
+
+html {
+    overflow: hidden;
 }

@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./node_modules/bulma/css/bulma.css">
@@ -15,7 +14,7 @@
     <div class="box sidebar">
         <i class="fas fa-ellipsis-h"></i>
         <br><br>
-        <i class="fas fa-running"></i>
+        <!--<i class="fas fa-running"></i>-->
     </div>
     <div class="columns">
         <div class="column is-1"></div>
@@ -36,8 +35,8 @@
             </aside>
         </div>
         <div class="column section box is-5" id="recipeTab">
-            <h1 class="title">FOOD NAME</h1>
-            <h1 class="subtitle">500 calories per serving</h1>
+            <h1 class="title" id="recipeTabName">FOOD NAME</h1>
+            <h1 class="subtitle" id="recipeTabCalories">500 calories per serving</h1>
         </div>
     </div>
     <div class="modal" id="recipeModal">
