@@ -79,12 +79,9 @@ function showRecipes() {
 
 // This function is called from html and is actually used
 function openRecipe(name) {
-    console.log('opening recipe');
-    console.log(name);
     storage.setDataPath(defaultDataPath + '/recipes');
     storage.get(name, function(error, data) {
         if (error) throw error;
-        console.log(data);
         document.getElementById("recipeTabName").innerHTML = name.toUpperCase();
         document.getElementById("recipeTabCalories").innerHTML = data.caloriesPerServing + ' calories per serving';
     });
