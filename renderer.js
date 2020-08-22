@@ -71,7 +71,7 @@ function showRecipes() {
             document.getElementById(listId).innerHTML += 
                 '<li><a onclick="openRecipe(\'' + name + '\')"><h2 class="subtitle is-5">' + name + ': <strong>' + recipe.caloriesPerServing + ' kcal<strong></h2></a></li>';
 
-            // Assign all names to an array to later add function to the recipes
+            // Assign all names to an array to later add functionality to the recipes
             names.push(name);
         });
     }, 250);
@@ -91,5 +91,5 @@ function openRecipe(name) {
 function urlify(text) {
     // Source: https://stackoverflow.com/questions/1500260/detect-urls-in-text-with-javascript
     var urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, '<a href="$1">$1</a>')
+    return text.replace(urlRegex, '<a href="$1">$1</a>');
   }
