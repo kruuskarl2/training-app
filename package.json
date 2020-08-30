@@ -25,6 +25,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bulma": "^0.9.0",
     "coffee-script": "^1.12.7",
+    "electron-is-dev": "^1.2.0",
     "electron-json-storage": "^4.2.0"
   }
 }
