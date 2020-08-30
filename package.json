@@ -4,13 +4,22 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "training.app",
+    "mac": {
+      "category": "fitness"
+    }
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.2.0"
+    "electron": "^9.2.0",
+    "electron-builder": "^22.8.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
